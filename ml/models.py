@@ -8,3 +8,6 @@ class Result(models.Model):
     confidence = models.FloatField()
     is_correct = models.BooleanField(null=True)
     other_predictions = models.TextField()
+
+    def __str__(self):
+        return self.description + ' : ' + self.prediction
