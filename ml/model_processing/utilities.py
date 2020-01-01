@@ -11,18 +11,19 @@ def return_datasets(train_path, test_path):
     return (train, test)
 
 def generate_text(dataset):
-    text = [" ".join(doc['ingredients']).lower() for doc in data]
+    text = [" ".join(doc['ingredients']).lower() for doc in dataset]
     return text
 
+def generate_input_text(input_string):
+    return [" ".join(input_string.split()).lower()]
+
 def get_tfidf_processing(train_text):
-    tfidf = TfidfVectorizer(binary=True)
+    tfidf = TfidfVectorizer(binary=True, max_features=3010)
     train_tfidf = tfidf.fit_transform(train_text)
-    train_text = train_text.astype('float16')
     return (tfidf, train_text)
 
 def get_tfidf_input_processed(vectorizer, input_text):
     processed = vectorizer.transform(input_text)
-    processed = processed('float16')
     return processed
 
 def get_targets(train_dataset):
