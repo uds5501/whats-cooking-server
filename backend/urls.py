@@ -4,10 +4,10 @@ from rest_framework import routers
 from ml import views
 
 router = routers.DefaultRouter()
-router.register(r'results', views.ResultView, 'result')
+router.register(r'predictions', views.ResultView, 'prediction')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('results/', views.foobar),
+    path('results/', views.predict),
 ]
