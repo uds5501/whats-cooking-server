@@ -83,11 +83,11 @@ CORS_ORIGIN_WHITELIST = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cooking',
-        'USER': 'name',
-        'PASSWORD': '',
+        'NAME': 'sample_database',
+        'USER': 'sample_user',
+        'PASSWORD': 'sample_password',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
@@ -130,5 +130,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATIC_URL = '/static/'
-
-django_heroku.settings(locals())

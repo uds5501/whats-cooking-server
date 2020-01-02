@@ -45,7 +45,6 @@ pyparsing==2.2.2
 pytest==3.8.2
 pytz==2018.5
 PyWavelets==1.0.1
-pywin32==223
 redis==2.10.6
 reportlab==3.5.12
 requests==2.11.1
@@ -82,6 +81,6 @@ widgetsnbextension==3.4.2
 win-inet-pton==1.0.1
 win-unicode-console==0.5
 whitenoise==5.0.1
-psycopg2==2.7.2
+--no-binary :all: psycopg2==2.7.2
 dj-database-url==0.5.0
 gunicorn==19.7.1
