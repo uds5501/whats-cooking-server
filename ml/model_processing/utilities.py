@@ -1,3 +1,8 @@
+def warn(*args, **kwargs):
+    pass
+import warnings
+warnings.warn = warn
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import LabelEncoder

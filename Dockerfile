@@ -1,3 +1,8 @@
+FROM heroku/miniconda
+RUN conda install scikit-learn numpy scipy nltk
+
+###
+
 FROM python:3.7-alpine
 
 WORKDIR /app
@@ -12,13 +17,10 @@ RUN apk update \
     && pip install psycopg2 \
     && apk del build-deps
 
-COPY ./requirements.txt .
+COPY ./requirements/requirements.txt .
 RUN python3 -m pip install -r requirements.txt
-
-RUN conda install scikit-learn numpy scipy nltk
-
 COPY . .
-RUN adduser -D myuser
-USER myuser
 
 CMD gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT
+
+###

@@ -4,4 +4,4 @@ from .models import Result
 class ResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Result
-        fields = ('id', 'description', 'prediction', 'confidence', 'is_correct')
+        fields = ('id', 'description', 'prediction', 'is_correct')

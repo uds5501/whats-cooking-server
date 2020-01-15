@@ -8,7 +8,7 @@ class MlConfig(AppConfig):
     name = 'ml'
     # Preprocess essential inputs    
     BASE_PATH = os.path.join(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'model_processing'), 'input')
-    MODEL_WEIGHT = os.path.join(BASE_PATH, 'final_model.sav')
+    MODEL_WEIGHT = os.path.join(BASE_PATH, 'final_model_noproba.sav')
     TRAIN_DATA = os.path.join(BASE_PATH, 'train.json')
     TEST_DATA = os.path.join(BASE_PATH, 'test.json')
 
